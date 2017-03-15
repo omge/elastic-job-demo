@@ -6,6 +6,7 @@ package com.cheng.elastic;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -15,9 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MySimpleElasticJob implements SimpleJob {
 
-
     public void execute(ShardingContext shardingContext) {
-        log.info("SimpleJob 启动开始：{}",shardingContext.getShardingItem());
+        log.info("SimpleJob 启动开始：{}", shardingContext.getShardingItem());
         switch (shardingContext.getShardingItem()) {
             case 0:
                 // do something by sharding item 0
